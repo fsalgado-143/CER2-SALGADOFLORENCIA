@@ -1,15 +1,16 @@
+{% extends 'puertoVivo/base.html' %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static '/puertoVivo/css/bootstrap.css'%}">
-    <title> Puerto Vivo - Principal </title>
-</head>
-<body>
+
+{% block title %}
+Inicio - Fundación Puerto Vivo
+{% endblock %}
+
+{% block content %}
+
     <h1> wazaaa </h1>
 
     <a href="{% url 'base' %}" alt="Pikmin"> pam pam a la base </a>
-</body>
-</html>
+
+
+{% endblock %}
