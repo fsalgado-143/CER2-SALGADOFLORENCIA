@@ -19,57 +19,62 @@
 </head>
 <body>
     
-    <!-- navbar-->
-    <nav class="navbar navbar-expand-lg  navbar-style shadow">
-        <div class="container">
+<!-- navbar-->
+<nav class="navbar navbar-expand-lg navbar-style shadow">
+    <div class="container">
 
-            <a class="navbar-brand navbar-link" href="{% url 'home' %}">
-                Patrimonio Vivo
-            </a>
+        <a class="navbar-brand navbar-link" href="{% url 'home' %}">
+            <img src="{% static 'puertoVivo/img/logo.jpg' %}"
+                 alt="Fundación Patrimonio Vivo"
+                 class="navbar-logo">
+        </a>
 
-            <button class="navbar-toggler" type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="menu">
+        <div class="collapse navbar-collapse" id="menu">
 
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="navbar-link" href="{% url 'home' %}">
-                            Inicio
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="navbar-link" 
-                        href="{% url 'catalogo' %}">
-                            Catálogo
-                        </a>
-                    </li>
-                </ul>
-
-                <!-- Opciones según autenticación -->
-                {% if user.is_authenticated %}
-                    <span class="navbar-text me-3">
-                        Hola, {{ user.username }}
-                    </span>
-
-                    <a class="btn btn-outline-light"
-                       >
-                        Cerrar sesión
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="navbar-link" href="{% url 'home' %}">
+                        Inicio
                     </a>
-                {% else %}
-                    <a class="btn btn-outline-light"
-                       >
-                        Iniciar sesión
-                    </a>
-                {% endif %}
+                </li>
 
-            </div>
+                <li class="nav-item">
+                    <a class="navbar-link" href="{% url 'catalogo' %}">
+                        Catálogo
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Opciones según autenticación -->
+            {% if user.is_authenticated %}
+
+                <span class="navbar-text me-3">
+                    Hola, {{ user.username }}
+                </span>
+
+                <a class="btn btn-outline-danger"
+                href="">
+                    Cerrar sesión
+                </a>
+
+            {% else %}
+
+                <a class="btn btn-outline-danger"
+                   href="">
+                    Iniciar sesión
+                </a>
+
+            {% endif %}
+
         </div>
-    </nav>
+    </div>
+</nav>
 
     {% block content %}
     {% endblock %}
@@ -111,7 +116,7 @@
 </footer>
 
 <div class="text-center py-3 copyright-style">
-        <p class="mb-0">© 2026 Fundación Puerto Vivo. Todos los derechos reservados.</p>
+        <p class="mb-0">© 2026 Fundación Patrimonio Vivo. Todos los derechos reservados.</p>
 </div>
 
     <!-- Scripts de Bootstrap -->

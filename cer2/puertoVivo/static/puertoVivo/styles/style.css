@@ -1,54 +1,301 @@
+
+/* generales */
 body {
     font-family: "Rubik", sans-serif;
+    background-color: #ffffff;
+    color: #171717;
 }
 
-.navbar-style{
-    background-color: #74C365;
-    height: 100px; 
-    width:100%;
-    color:rgb(255, 248, 239);
+/* navbar */
+
+.navbar-style {
+    background-color: #ffffff;
+    height: 100px;
+    width: 100%;
+    color: #171717;
 }
 
 .navbar-nav {
     gap: 1rem;
 }
 
-.navbar-link{
-    color:rgb(255, 248, 239);
+.navbar-link {
+    color: #171717;
     text-decoration: none;
 }
 
-.navbar-link .navbar-link.active{
-    color:rgb(255, 248, 239);
+.navbar-link .navbar-link.active {
+    color: #C62828;
     text-decoration: underline;
 }
 
+.navbar-link,
+.navbar-nav .nav-link,
+.navbar-brand {
+    font-size: 1.2rem;
+}
+
 .navbar-collapse {
-    background-color: #74C365;
+    background-color: #ffffff;
     border-radius: 8px;
     padding: 10px 15px;
 }
 
 .navbar-collapse .nav-link {
-    color: white !important;
+    color: #171717 !important;
 }
 
 .navbar-collapse.show {
-    background-color: #74C365;
+    background-color: #ffffff;
 }
 
-
-
-.footer-style{
-    background-color: rgb(255, 248, 239);
-    color:#74C365;
-    height: auto; 
-    width:100%;
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
 }
 
-.copyright-style{
-    background-color: #74C365;
-    color:rgb(255, 248, 239);
-    height:80px; 
-    width:100%;
+.navbar-logo {
+    height: 75px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* footer */
+
+.footer-style {
+    background-color: #FFF8EF;
+    color: #171717;
+    height: auto;
+    width: 100%;
+}
+
+.copyright-style {
+    background-color: #C62828;
+    color: #FFF8EF;
+    height: 80px;
+    width: 100%;
+}
+
+/* css home */
+
+.principal-carrusel {
+    width: 100%;
+    overflow: hidden;
+}
+
+.principal-carrusel .carousel-item {
+    height: 450px;
+}
+
+.principal-carrusel .carousel-item img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+.principal-carrusel .carousel-caption {
+    background-color: rgba(23, 23, 23, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    color: #FFF8EF;
+}
+
+.principal-carrusel .carousel-caption h5 {
+    color: #F9C74F;
+}
+
+/* info */
+
+.principal-fecha {
+    margin: 40px 0;
+    padding: 20px;
+}
+
+.fecha-evento {
+    background-color: #FFFFFF;
+    color: #171717;
+    border-radius: 12px;
+    padding: 30px;
+    height: 100%;
+    text-align: center;
+}
+
+.fecha-evento h2 {
+    color: #C62828;
+    margin-bottom: 20px;
+}
+
+/* promociones */
+
+.principal-cartelera {
+    padding: 30px;
+    margin: 20px 0;
+}
+
+.principal-cartelera h2 {
+    color: #C62828;
+}
+
+.principal-cartelera .cartelera-card {
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.principal-cartelera .card-img-top {
+    height: 220px;
+    object-fit: cover;
+}
+
+.principal-cartelera .card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.principal-cartelera .card-body .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+/* catalogo */
+
+.cartelera-titulo {
+    background-color: #FFF8EF;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cartelera-titulo h1 {
+    color: #C62828;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.cartelera-titulo p {
+    color: #171717;
+    font-size: 1.1rem;
+}
+
+.cartelera-filtros {
+    background-color: #F9C74F;
+    padding: 30px 0;
+}
+
+.cartelera-filtros label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #171717;
+}
+
+.cartelera-filtros .form-select {
+    border-radius: 8px;
+    border: 1px solid #C62828;
+}
+
+.cartelera-filtros .form-select:focus {
+    border-color: #C62828;
+    box-shadow: 0 0 0 0.2rem rgba(198, 40, 40, 0.25);
+}
+
+/* tarjetas */
+
+.cartelera-actividades {
+    padding: 50px 0;
+}
+
+.cartelera-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cartelera-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(198, 40, 40, 0.2);
+}
+
+.cartelera-card .card-img-top {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.cartelera-card .card-body {
+    padding: 20px;
+}
+
+.cartelera-card .card-title {
+    color: #C62828;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.cartelera-card .card-text {
+    color: #171717;
+    line-height: 1.7;
+}
+
+/* botones */
+
+.btn-primary {
+    background-color: #C62828;
+    border-color: #C62828;
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: #A51F1F;
+    border-color: #A51F1F;
+    color: #FFFFFF;
+}
+
+/* base descripcion lugares */
+
+.detalle-patrimonial {
+    padding: 50px 0;
+}
+
+.detalle-patrimonial img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.detalle-patrimonial h1 {
+    color: #C62828;
+    font-weight: bold;
+}
+
+.detalle-patrimonial p {
+    line-height: 1.8;
+    color: #171717;
+}
+
+/* config responsividad */
+
+@media (max-width: 768px) {
+
+    .cartelera-titulo {
+        padding: 40px 15px;
+    }
+
+    .cartelera-titulo h1 {
+        font-size: 1.8rem;
+    }
+
+    .navbar-style {
+        min-height: 80px;
+    }
+
+    .cartelera-card .card-img-top {
+        height: 200px;
+    }
+
 }

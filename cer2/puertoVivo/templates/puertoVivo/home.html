@@ -3,14 +3,174 @@
 {% load static %}
 
 {% block title %}
-Inicio - Fundación Puerto Vivo
+Inicio - Fundación Patrimonio Vivo
 {% endblock %}
 
 {% block content %}
 
-    <h1> wazaaa </h1>
+<!-- carrusel -->
+<section id="carouselPatrimonio"
+        class="carousel slide principal-carrusel carousel-fade"
+        data-bs-ride="carousel">
 
-    <a href="{% url 'base' %}" alt="Pikmin"> pam pam a la base </a>
+    {% if lugares_destacados %}
+
+    <div class="carousel-indicators">
+        {% for lugar in lugares_destacados %}
+            <button type="button"
+                    data-bs-target="#carouselPatrimonio"
+                    data-bs-slide-to="{{ forloop.counter0 }}"
+                    class="{% if forloop.first %}active{% endif %}"
+                    {% if forloop.first %}aria-current="true"{% endif %}
+                    aria-label="Slide {{ forloop.counter }}">
+            </button>
+        {% endfor %}
+    </div>
+
+    <div class="carousel-inner">
+
+        {% for lugar in lugares_destacados %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+
+            <img src="{{ lugar.imagen }}"
+                 class="d-block w-100"
+                 alt="{{ lugar.nombre }}">
+
+            <div class="carousel-caption">
+                <h5>{{ lugar.nombre }}</h5>
+                <p>{{ lugar.ubicacion }}</p>
+
+                <a href="{% url 'detalle' lugar.id %}"
+                   class="btn btn-primary">
+                    Conocer más
+                </a>
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <button class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselPatrimonio"
+            data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Anterior</span>
+    </button>
+
+    <button class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselPatrimonio"
+            data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Siguiente</span>
+    </button>
+
+    {% endif %}
+
+</section>
+
+
+<!-- info -->
+
+<section class="principal-fecha row">
+
+    <div class="col-md-6">
+        <div class="fecha-evento">
+
+            <h2><strong>NUESTRO PROPÓSITO</strong></h2>
+
+            <p>
+                Fundación Patrimonio Vivo busca documentar,
+                preservar y difundir el patrimonio cultural
+                presente en distintos lugares de Chile.
+            </p>
+
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="fecha-evento">
+
+            <h2><strong>EXPLORA EL PATRIMONIO</strong></h2>
+
+            <p>
+                Descubre lugares patrimoniales a través de nuestro
+                catálogo digital. Puedes explorar distintas
+                categorías y conocer información sobre su historia,
+                ubicación y características.
+            </p>
+
+            <a href="{% url 'catalogo' %}" class="btn btn-primary">
+                Explorar catálogo
+            </a>
+
+        </div>
+    </div>
+
+</section>
+
+
+<!-- promociones -->
+
+<section class="row principal-cartelera">
+
+    <h2 class="text-center mb-4">
+        <strong>LUGARES PATRIMONIALES DESTACADOS</strong>
+    </h2>
+
+    {% for lugar in lugares_destacados %}
+
+    <div class="col-lg-3 col-md-6 mb-4">
+
+        <div class="card cartelera-card h-100">
+
+            <img src="{{ lugar.imagen }}"
+                 class="card-img-top"
+                 alt="{{ lugar.nombre }}">
+
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    {{ lugar.nombre }}
+                </h5>
+
+                <p class="card-text">
+                    {{ lugar.ubicacion }}
+                </p>
+
+                <p class="card-text">
+                    <strong>Categoría:</strong>
+                    {{ lugar.categoria.nombre }}
+                </p>
+
+                <a href="{% url 'detalle' lugar.id %}"
+                   class="btn btn-primary">
+                    Ver lugar
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% empty %}
+
+    <p class="text-center">
+        Todavía no hay lugares patrimoniales registrados.
+    </p>
+
+    {% endfor %}
+
+    <div class="text-center mt-3">
+        <a href="{% url 'catalogo' %}" class="btn btn-primary">
+            Ver catálogo completo
+        </a>
+    </div>
+
+</section>
 
 
 {% endblock %}
