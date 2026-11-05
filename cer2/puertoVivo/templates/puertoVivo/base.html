@@ -51,26 +51,37 @@
                 </li>
             </ul>
 
+        {% if user.is_authenticated %}
+
+    <a class="navbar-link me-3"
+       href="{% url 'panel_admin' %}">
+        Administración
+    </a>
+
+{% endif %}
+
             <!-- Opciones según autenticación -->
             {% if user.is_authenticated %}
 
                 <span class="navbar-text me-3">
                     Hola, {{ user.username }}
                 </span>
+ <form method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
 
-                <a class="btn btn-outline-danger"
-                href="">
-                    Cerrar sesión
-                </a>
+        <button type="submit" class="btn btn-outline-danger">
+            Cerrar sesión
+        </button>
+    </form>
 
-            {% else %}
+{% else %}
 
-                <a class="btn btn-outline-danger"
-                   href="">
-                    Iniciar sesión
-                </a>
+    <a class="btn btn-outline-danger"
+       href="{% url 'login' %}">
+        Iniciar sesión
+    </a>
 
-            {% endif %}
+{% endif %}
 
         </div>
     </div>

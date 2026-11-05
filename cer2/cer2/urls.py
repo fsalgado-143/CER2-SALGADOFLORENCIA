@@ -23,4 +23,13 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('base/', views.base, name='base'),
     path('catalogo/', views.catalogo, name='catalogo'),
+    path('cuentas/', include('django.contrib.auth.urls')),
+    path('descripcion/<int:id>/', views.descripcion, name='descripcion'),
+    
+    path('panel/', views.panel_admin, name='panel_admin'),
+    path('panel/crear/', views.crear_lugar, name='crear_lugar'),
+    path('panel/editar/<int:id>/',
+        views.editar_lugar, name='editar_lugar'),
+    path('panel/eliminar/<int:id>/',
+        views.eliminar_lugar, name='eliminar_lugar'),
 ]
