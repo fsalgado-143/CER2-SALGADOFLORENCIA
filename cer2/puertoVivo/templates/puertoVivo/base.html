@@ -7,6 +7,11 @@
     <title> {% block title %} - Fundación Puerto Vivo - {% endblock %}</title>
         <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Valley+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 
     <!-- CSS propio -->
     <link rel="stylesheet" href="{% static 'puertoVivo/styles/style.css' %}">
@@ -18,7 +23,7 @@
     <nav class="navbar navbar-expand-lg  navbar-style shadow">
         <div class="container">
 
-            <a class="navbar-brand" href="{% url 'home' %}">
+            <a class="navbar-brand navbar-link" href="{% url 'home' %}">
                 Patrimonio Vivo
             </a>
 
@@ -32,13 +37,13 @@
 
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}">
+                        <a class="navbar-link" href="{% url 'home' %}">
                             Inicio
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" 
+                        <a class="navbar-link" 
                         href="{% url 'catalogo' %}">
                             Catálogo
                         </a>
@@ -67,11 +72,43 @@
     </nav>
 
 
-<footer class="footer-style">
-    <div class="container text-center py-3">
-        <p class="mb-0">© 2024 Fundación Puerto Vivo. Todos los derechos reservados.</p>
+<footer class= "footer-style">
+    <div class = "containter p-4">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Fundación Puerto Vivo</h5>
+                <p>
+                    Somos una organización dedicada a la conservación y promoción del patrimonio cultural y natural de nuestra región.
+                </p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Enlaces</h5>
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <a href="{% url 'home' %}" class="text-green">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'catalogo' %}" class="text-green">Catálogo</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Contacto</h5>
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <p class="text-green mb-0"> Email: info@puertovivo.org </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </footer>
+
+<div class="text-center py-3 copyright-style">
+        <p class="mb-0">© 2026 Fundación Puerto Vivo. Todos los derechos reservados.</p>
+</div>
 
     <!-- Scripts de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

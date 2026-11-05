@@ -1,14 +1,54 @@
+body {
+    font-family: "Rubik", sans-serif;
+}
+
 .navbar-style{
     background-color: #74C365;
-    color:antiquewhite;
     height: 100px; 
     width:100%;
+    color:rgb(255, 248, 239);
+}
+
+.navbar-nav {
+    gap: 1rem;
+}
+
+.navbar-link{
+    color:rgb(255, 248, 239);
+    text-decoration: none;
+}
+
+.navbar-link .navbar-link.active{
+    color:rgb(255, 248, 239);
+    text-decoration: underline;
+}
+
+.navbar-collapse {
+    background-color: #74C365;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+
+.navbar-collapse .nav-link {
+    color: white !important;
+}
+
+.navbar-collapse.show {
+    background-color: #74C365;
 }
 
 
+
 .footer-style{
+    background-color: rgb(255, 248, 239);
+    color:#74C365;
+    height: auto; 
+    width:100%;
+}
+
+.copyright-style{
     background-color: #74C365;
-    color:antiquewhite;
-    height: 100px; 
+    color:rgb(255, 248, 239);
+    height:80px; 
     width:100%;
 }
