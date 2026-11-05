@@ -107,3 +107,8 @@ http://127.0.0.1:8000/admin/
 - CSS
 - Bootstrap
 - Base de datos configurada en Django.
+
+  ## 8. Usuarios de prueba -
+  Existen dos usuarios de prueba disponibles:
+  Usuario anonimo - entrar a la pagina asi solamente
+  SuperUser - admin, contraseña: admin123
