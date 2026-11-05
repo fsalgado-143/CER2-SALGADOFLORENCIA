@@ -6,7 +6,30 @@ from .models import LugarPatrimonial, Categoria
 from .forms import LugarPatrimonialForm
 
 def home(request):
-    return render(request,'puertoVivo/home.html')
+    imagenes_carrusel = [ 
+        {
+            'imagen': 'https://i.pinimg.com/736x/f3/ca/51/f3ca519b500e44e2fd1fe6c9347cfed1.jpg',
+            'titulo': 'Patrimonio de Chile',
+            'descripcion': 'Descubre nuestra riqueza cultural.'
+        },
+        {
+            'imagen': 'https://ejemplo.com/imagen2.jpg',
+            'titulo': 'Nuestra historia',
+            'descripcion': 'Conoce los lugares que nos representan.'
+        },
+        {
+            'imagen': 'https://ejemplo.com/imagen3.jpg',
+            'titulo': 'Cultura y tradición',
+            'descripcion': 'Preservemos nuestro patrimonio.'
+        }
+        ]
+    
+    lugares_destacados = LugarPatrimonial.objects.all()[:4]
+
+    return render(request, 'puertoVivo/home.html', {
+        'lugares_destacados': lugares_destacados,
+        'imagenes_carrusel': imagenes_carrusel
+    })
 
 def catalogo(request):
 

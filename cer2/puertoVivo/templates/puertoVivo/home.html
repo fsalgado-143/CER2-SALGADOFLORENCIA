@@ -40,7 +40,7 @@ Inicio - Fundación Patrimonio Vivo
                 <h5>{{ lugar.nombre }}</h5>
                 <p>{{ lugar.ubicacion }}</p>
 
-                <a href="{% url 'detalle' lugar.id %}"
+                <a href="{% url 'descripcion' lugar.id %}"
                    class="btn btn-primary">
                     Conocer más
                 </a>
@@ -145,7 +145,7 @@ Inicio - Fundación Patrimonio Vivo
                     {{ lugar.categoria.nombre }}
                 </p>
 
-                <a href="{% url 'detalle' lugar.id %}"
+                <a href="{% url 'descripcion' lugar.id %}"
                    class="btn btn-primary">
                     Ver lugar
                 </a>
